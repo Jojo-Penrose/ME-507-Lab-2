@@ -1,0 +1,114 @@
+\doxysection{Core/\+Inc/motor.h File Reference}
+\hypertarget{motor_8h}{}\label{motor_8h}\index{Core/Inc/motor.h@{Core/Inc/motor.h}}
+
+
+Motor PWM control library for the STM32.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}stm32l4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}}
+\begin{DoxyCompactList}\small\item\em A PWM motor object to use with the STM32. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motor_8h_a34fb60a939a3ade1059f8eaddbb24be5}{motor\+\_\+set\+\_\+duty}} (\mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}} \texorpdfstring{$\ast$}{*}mot, int32\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Set motor duty cycle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor_8h_a5effc61e9b8e746f2d4bd08bc29a0c1f}{motor\+\_\+enable}} (\mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}} \texorpdfstring{$\ast$}{*}mot)
+\begin{DoxyCompactList}\small\item\em Enable motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor_8h_a78266ad22a5e223abc950cabfb11cacd}{motor\+\_\+disable}} (\mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}} \texorpdfstring{$\ast$}{*}mot)
+\begin{DoxyCompactList}\small\item\em Disable motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Motor PWM control library for the STM32. 
+
+\begin{DoxyAuthor}{Author}
+Jojo Penrose 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18 Apr 2024 
+\end{DoxyDate}
+Contains a motor struct to encapsulate a single motor object requiring two PWM channels for control. Also contains methods useful to motor control. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{motor_8h_a78266ad22a5e223abc950cabfb11cacd}\index{motor.h@{motor.h}!motor\_disable@{motor\_disable}}
+\index{motor\_disable@{motor\_disable}!motor.h@{motor.h}}
+\doxysubsubsection{\texorpdfstring{motor\_disable()}{motor\_disable()}}
+{\footnotesize\ttfamily \label{motor_8h_a78266ad22a5e223abc950cabfb11cacd} 
+void motor\+\_\+disable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}} \texorpdfstring{$\ast$}{*}}]{mot}{}\end{DoxyParamCaption})}
+
+
+
+Disable motor. 
+
+Detailed description of what the function does. 
+\begin{DoxyParams}{Parameters}
+{\em mot} & A pointer to the motor struct. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Something to note. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Warning. 
+\end{DoxyWarning}
+\Hypertarget{motor_8h_a5effc61e9b8e746f2d4bd08bc29a0c1f}\index{motor.h@{motor.h}!motor\_enable@{motor\_enable}}
+\index{motor\_enable@{motor\_enable}!motor.h@{motor.h}}
+\doxysubsubsection{\texorpdfstring{motor\_enable()}{motor\_enable()}}
+{\footnotesize\ttfamily \label{motor_8h_a5effc61e9b8e746f2d4bd08bc29a0c1f} 
+void motor\+\_\+enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}} \texorpdfstring{$\ast$}{*}}]{mot}{}\end{DoxyParamCaption})}
+
+
+
+Enable motor. 
+
+Detailed description of what the function does. 
+\begin{DoxyParams}{Parameters}
+{\em mot} & A pointer to the motor struct. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Something to note. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Warning. 
+\end{DoxyWarning}
+\Hypertarget{motor_8h_a34fb60a939a3ade1059f8eaddbb24be5}\index{motor.h@{motor.h}!motor\_set\_duty@{motor\_set\_duty}}
+\index{motor\_set\_duty@{motor\_set\_duty}!motor.h@{motor.h}}
+\doxysubsubsection{\texorpdfstring{motor\_set\_duty()}{motor\_set\_duty()}}
+{\footnotesize\ttfamily \label{motor_8h_a34fb60a939a3ade1059f8eaddbb24be5} 
+void motor\+\_\+set\+\_\+duty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___str}{Motor\+\_\+\+Str}} \texorpdfstring{$\ast$}{*}}]{mot}{, }\item[{int32\+\_\+t}]{duty}{}\end{DoxyParamCaption})}
+
+
+
+Set motor duty cycle. 
+
+Detailed description of what the function does.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mot} & A pointer to the motor struct. \\
+\hline
+{\em duty} & The requested duty cycle, saturated to +/-\/100 percent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Something to note. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Duty cycle is an INTEGER, please round all floats when passing, thx. 
+\end{DoxyWarning}

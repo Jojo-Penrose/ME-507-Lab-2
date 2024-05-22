@@ -1,0 +1,59 @@
+\doxysection{Motor\+\_\+\+Str Struct Reference}
+\hypertarget{struct_motor___str}{}\label{struct_motor___str}\index{Motor\_Str@{Motor\_Str}}
+
+
+A PWM motor object to use with the STM32.  
+
+
+
+
+{\ttfamily \#include $<$motor.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{struct_motor___str_ab6a8993805fd7b50a32669337ca3a37a}{duty}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_motor___str_a2a5924f0ccbeda286ad424c62e651d11}{enable}}
+\item 
+\mbox{\hyperlink{struct_t_i_m___handle_type_def}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_motor___str_a30b15aedcc086ca7abb69f7ac012ce64}{timer}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_motor___str_ab62f51ab255a285d77833525250a7f15}{Channel\+Pair}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A PWM motor object to use with the STM32. 
+
+A motor in this context uses two channels of a PWM-\/enabled timer that is pre-\/ configured at instantiation. The object assumes that the first and last two channels of a timer are to be used as a pair (i.\+e. CH1 \& CH2 or CH3 \& CH4). It contains a the signed duty cycle (fwd/bwd), a reference to the HAL timer, and an indicator of which channels on the timer are used for this motor. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_motor___str_ab62f51ab255a285d77833525250a7f15}\index{Motor\_Str@{Motor\_Str}!ChannelPair@{ChannelPair}}
+\index{ChannelPair@{ChannelPair}!Motor\_Str@{Motor\_Str}}
+\doxysubsubsection{\texorpdfstring{ChannelPair}{ChannelPair}}
+{\footnotesize\ttfamily \label{struct_motor___str_ab62f51ab255a285d77833525250a7f15} 
+uint32\+\_\+t Channel\+Pair}
+
+A value between 1 and 2, indicating the timer channels to use\+: 1 = CH1 \& CH2 2 = CH3 \& CH4 \Hypertarget{struct_motor___str_ab6a8993805fd7b50a32669337ca3a37a}\index{Motor\_Str@{Motor\_Str}!duty@{duty}}
+\index{duty@{duty}!Motor\_Str@{Motor\_Str}}
+\doxysubsubsection{\texorpdfstring{duty}{duty}}
+{\footnotesize\ttfamily \label{struct_motor___str_ab6a8993805fd7b50a32669337ca3a37a} 
+int32\+\_\+t duty}
+
+Signed duty cycle integer saturated at +/-\/100, interpreted as percent duty. \Hypertarget{struct_motor___str_a2a5924f0ccbeda286ad424c62e651d11}\index{Motor\_Str@{Motor\_Str}!enable@{enable}}
+\index{enable@{enable}!Motor\_Str@{Motor\_Str}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily \label{struct_motor___str_a2a5924f0ccbeda286ad424c62e651d11} 
+uint32\+\_\+t enable}
+
+Logical enabled flag. Disabled motors have their drivers forced to STOP mode. \Hypertarget{struct_motor___str_a30b15aedcc086ca7abb69f7ac012ce64}\index{Motor\_Str@{Motor\_Str}!timer@{timer}}
+\index{timer@{timer}!Motor\_Str@{Motor\_Str}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \label{struct_motor___str_a30b15aedcc086ca7abb69f7ac012ce64} 
+\mbox{\hyperlink{struct_t_i_m___handle_type_def}{TIM\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} timer}
+
+A pointer to the HAL timer instance (htimx.\+Instance). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{motor_8h}{motor.\+h}}\end{DoxyCompactItemize}
